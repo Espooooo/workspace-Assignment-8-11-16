@@ -5,5 +5,13 @@ var firebaseConfig = {};
 firebase.initializeApp(firebaseConfig);
 
 // save the data
+$(".sampleSurvey input[type='submit')").click(function(e) {
+  e.preventDefault();
+
+});
+firebase
+  .firestore()
+  .collection("hotelSurvey")
+
 
 // update the result in table
