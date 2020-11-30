@@ -1,8 +1,14 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <script src="gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+    <!-- Jquery library   ---->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body>
     <div class="message">
       <h1>Join AikenConnect today!</h1>
@@ -18,9 +24,11 @@
             required
           />
         </p>
-        <p>Choose your user name</p>
+
+        <p>User name(Email address)</p>
         <p>
           <input
+            id="userIn"
             type="text"
             autocomplete="off"
             value=""
@@ -33,6 +41,7 @@
         <p>Create your password</p>
         <p>
           <input
+            id="PassIn"
             type="password"
             autocomplete="off"
             value=""
@@ -56,12 +65,18 @@
         <p><input type="submit" value="Create Your Account" /></p>
       </form>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
-	  </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
-	  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+    <!--  Save and display data on real time  -->
+
     <script src="js/Signup.js"></script>
   </body>
 </html>

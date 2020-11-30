@@ -9,27 +9,38 @@ var firebaseConfig = {
   measurementId: "G-9W77ZD235X"
 };
 
-//initialize
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-//Start
-console.log("start...");
-
-$('#signup-form').submit(function(e){
+// save the data
+$("#signup-form").submit(function(e) {
   e.preventDefault();
-  console.log("click the submit");
+  //get the username(email) and password from the form
+  //change the following code
+    var email = document.getElementById("userIn");
+    console.log("email");
+    var password = document.getElementById("passIn");
+    console.log("password");
 
-  // use the provided sign in 
-  //hwk is to read the data from the form
-  var email = "yilianz@gmail.com";
-  var psw = "aiken";
-  firebase.auth().createUserWithEmailAndPassword(email,psw).then(user =>{
-       console.log("success");
-  }).catch(error=>{
-       console.log(error.code); 
-       console.log(error.message);
-  });
+  // create a user with email address and password
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then(success => {
+      // Signed in
+    
+      
+      console.log("You are signed up");
+      let user = firebase.auth().currentUser;
 
-
-
+      user.updateProfile({ displayName: "Brendon Esposito" });
+      window.location.href = "Login.html";
+    })
+    .catch(error => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(error.code);
+      console.log(errorMessage);
+      console.log("error");
+    });
 });
